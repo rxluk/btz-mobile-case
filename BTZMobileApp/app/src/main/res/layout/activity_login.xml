@@ -19,11 +19,11 @@
 
     <TextView
         android:id="@+id/txtTitulo"
-        android:layout_width="245dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="161dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-black"
-        android:text="Bem-vindo"
+        android:text="Acesso"
         android:textColor="#020202"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,10 +32,10 @@
 
     <EditText
         android:id="@+id/inputPassword"
-        android:layout_width="269dp"
+        android:layout_width="173dp"
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="text|textPassword"
@@ -43,14 +43,16 @@
         android:textColorHint="#9E9C9C"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/btnEntrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/txtPassword" />
 
     <EditText
         android:id="@+id/inputLogin"
-        android:layout_width="269dp"
+        android:layout_width="170dp"
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:hint="Login"
         android:inputType="text"
@@ -59,6 +61,8 @@
         android:textColorHint="#9E9C9C"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/inputPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toEndOf="@+id/txtLogin" />
 
     <TextView
@@ -66,7 +70,7 @@
         android:layout_width="74dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="52dp"
         android:text="Login        :"
         android:textColor="#000000"
         android:textColorHint="#020202"

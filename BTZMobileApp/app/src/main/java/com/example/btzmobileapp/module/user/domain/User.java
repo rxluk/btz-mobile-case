@@ -1,42 +1,56 @@
 package com.example.btzmobileapp.module.user.domain;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import javax.annotation.processing.Generated;
+
+@Entity(tableName = "users")
 public class User {
-    private String id;
-    private String name;
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    private Long id;
+    private String nome;
+    private String username;
     private String email;
     private String password;
-
+    private String role;
 
     public User() {
     }
 
-    public User(String id, String name, String email, String password) {
-        this.id = id;
-        this.name = name;
+    public User(String username, String nome, String email, String password, String role) {
+        this.username = username;
+        this.nome = nome;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
-    public User(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-
-    public String getId() {
+    // Getters e Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -53,5 +67,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
