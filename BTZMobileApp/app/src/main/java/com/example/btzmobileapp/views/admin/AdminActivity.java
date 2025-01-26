@@ -1,11 +1,11 @@
-package com.example.btzmobileapp.views.activities.admin;
+package com.example.btzmobileapp.views.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.btzmobileapp.R;
-import com.example.btzmobileapp.views.activities.LoginActivity;
+import com.example.btzmobileapp.views.LoginActivity;
 
 public class AdminActivity extends AppCompatActivity {
     private View navigationView;

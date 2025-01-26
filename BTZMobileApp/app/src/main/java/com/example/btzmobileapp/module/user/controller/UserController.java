@@ -18,12 +18,16 @@ public class UserController {
         userService.insert(user);
     }
 
-    public void updateUser(String oldUsername, User user) throws Exception {
-        userService.update(oldUsername, user);
+    public void updateUserByCpf(String cpf, User user) throws Exception {
+        userService.updateByCpf(cpf, user);
     }
 
-    public void deleteUser(String username) throws Exception {
-        userService.delete(username);
+    public void deleteUserByUserName(String username) throws Exception {
+        userService.deleteByUsername(username);
+    }
+
+    public void deleteUserByCpf(String cpf) throws Exception {
+        userService.deleteByCpf(cpf);
     }
 
     public User getUserById(Long id) {
@@ -32,6 +36,10 @@ public class UserController {
 
     public User getUserByUsername(String username) {
         return userService.getUserByUsername(username);
+    }
+
+    public User getUserByCpf(String cpf) {
+        return userService.getUserByCpf(cpf);
     }
 
     public List<User> getAllUsers() {

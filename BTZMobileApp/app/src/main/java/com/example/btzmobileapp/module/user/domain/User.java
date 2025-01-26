@@ -14,16 +14,18 @@ public class User {
     private String email;
     private String password;
     private String role;
+    private String cpf; // Adicionando o campo CPF
 
     public User() {
     }
 
-    public User(String username, String nome, String email, String password, String role) {
+    public User(String username, String nome, String email, String password, String role, String cpf) {
         this.username = username;
         this.nome = nome;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.cpf = cpf;
     }
 
     // Getters e Setters
@@ -73,5 +75,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }

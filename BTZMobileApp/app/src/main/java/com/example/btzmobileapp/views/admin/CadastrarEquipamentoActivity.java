@@ -1,4 +1,4 @@
-package com.example.btzmobileapp.views.activities.admin;
+package com.example.btzmobileapp.views.admin;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;

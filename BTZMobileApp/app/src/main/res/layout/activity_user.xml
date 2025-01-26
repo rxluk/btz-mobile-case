@@ -16,6 +16,16 @@
         android:padding="16dp"
         android:minHeight="48dp" />
 
+    <!-- Campo CPF -->
+    <EditText
+        android:id="@+id/cpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF"
+        android:inputType="number"
+        android:padding="16dp"
+        android:minHeight="48dp" />
+
     <!-- Campo Email -->
     <EditText
         android:id="@+id/email"

@@ -30,6 +30,9 @@ public interface UserDao {
     @Query("SELECT * FROM users WHERE username = :username")
     User getUserByUsername(String username);
 
+    @Query("SELECT * FROM users WHERE cpf = :cpf")
+    User getUserByCpf(String cpf);
+
     @Query("SELECT * FROM users")
     List<User> getAllUsers();
 }
