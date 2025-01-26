@@ -31,16 +31,30 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.BTZMobileApp" />
 
-        <!-- Declaração da CadastrarUserActivity -->
+        <!-- Declaração da UserActivity -->
         <activity
             android:name=".views.activities.admin.UserActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BTZMobileApp" />
 
-        <!-- Declaração da ConsultarUsuarioActivity -->
+        <!-- Declaração da CadastrarEquipamentoActivity -->
         <activity
-            android:name=".views.activities.admin.ConsultarUsuarioActivity"
+            android:name=".views.activities.admin.CadastrarEquipamentoActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.BTZMobileApp" />
+
+        <!-- Declaração da LerEquipamentoActivity -->
+        <activity
+            android:name=".views.activities.admin.LerEquipamentoActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.BTZMobileApp" />
+
+        <!-- Declaração da VincularEquipamentoActivity -->
+        <activity
+            android:name=".views.activities.admin.VincEquipActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BTZMobileApp" />

@@ -17,11 +17,35 @@ public class AdminActivity extends AppCompatActivity {
 
         navigationView = findViewById(R.id.navigationView2);
 
-        // Definir comportamento do botão "Cadastrar Usuário"
+        // Definir comportamento do botão "Usuário"
         findViewById(R.id.btnUser).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminActivity.this, UserActivity.class));
+            }
+        });
+
+        // Definir comportamento do botão "Cadastrar Equipamento"
+        findViewById(R.id.btnCadastrarEquipamento).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, CadastrarEquipamentoActivity.class));
+            }
+        });
+
+        // Definir comportamento do botão "Ler Equipamento"
+        findViewById(R.id.btnLerEquipamento).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, LerEquipamentoActivity.class));
+            }
+        });
+
+        // Definir comportamento do botão "Vincular Equipamento"
+        findViewById(R.id.btnVincularEquipamento).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, VincEquipActivity.class));
             }
         });
     }

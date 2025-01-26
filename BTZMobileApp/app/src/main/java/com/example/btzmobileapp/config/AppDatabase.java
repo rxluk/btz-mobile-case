@@ -7,10 +7,13 @@ import androidx.room.RoomDatabase;
 
 import com.example.btzmobileapp.module.user.dao.UserDao;
 import com.example.btzmobileapp.module.user.domain.User;
+import com.example.btzmobileapp.module.equipamento.dao.EquipamentoDao; // Importar o EquipamentoDao
+import com.example.btzmobileapp.module.equipamento.domain.Equipamento; // Importar a entidade Equipamento
 
-@Database(entities = {User.class}, version = 2, exportSchema = false)
+@Database(entities = {User.class, Equipamento.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
+    public abstract EquipamentoDao equipamentoDao(); // Adicionar o DAO de Equipamento
 
     private static volatile AppDatabase INSTANCE;
 
