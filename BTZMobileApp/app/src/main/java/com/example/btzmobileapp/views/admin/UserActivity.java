@@ -11,11 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.btzmobileapp.R;
 import com.example.btzmobileapp.module.user.domain.User;
 import com.example.btzmobileapp.module.user.controller.UserController;
+import com.example.btzmobileapp.views.BaseAdminActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends BaseAdminActivity {
 
     private EditText username, nome, email, password, cpf;
     private RadioGroup roleGroup;

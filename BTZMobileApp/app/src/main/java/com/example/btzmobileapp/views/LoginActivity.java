@@ -1,6 +1,7 @@
 package com.example.btzmobileapp.views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -79,6 +80,10 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 if (foundUser != null && EncryptionUtil.verifyPassword(password, foundUser.getPassword())) {
                     Log.d(TAG, "Senha verificada com sucesso");
+
+                    // Armazenar a role do usuário em SharedPreferences
+                    storeUserRole(foundUser);
+
                     Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                     startActivity(intent);
                     Log.d(TAG, "Iniciando AdminActivity");
@@ -91,5 +96,12 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Erro ao verificar a senha", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void storeUserRole(User user) {
+        SharedPreferences preferences = getSharedPreferences("APP_PREFS", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("ROLE", user.getRole());
+        editor.apply();
     }
 }

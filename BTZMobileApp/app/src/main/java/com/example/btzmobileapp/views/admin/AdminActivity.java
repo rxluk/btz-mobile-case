@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.btzmobileapp.R;
+import com.example.btzmobileapp.views.BaseAdminActivity;
 import com.example.btzmobileapp.views.LoginActivity;
 
-public class AdminActivity extends AppCompatActivity {
+public class AdminActivity extends BaseAdminActivity {
     private View navigationView;
 
     @Override
