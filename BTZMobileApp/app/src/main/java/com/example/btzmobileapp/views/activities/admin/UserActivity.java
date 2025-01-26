@@ -27,10 +27,8 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
-        // Inicializar UserController
         userController = new UserController(this);
 
-        // Inicializar componentes do layout
         username = findViewById(R.id.username);
         nome = findViewById(R.id.nome);
         email = findViewById(R.id.email);
@@ -43,7 +41,6 @@ public class UserActivity extends AppCompatActivity {
         btnAlterar = findViewById(R.id.btnAlterar);
         btnDeletar = findViewById(R.id.btnDeletar);
 
-        // Configurar botão Cadastrar
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +61,6 @@ public class UserActivity extends AppCompatActivity {
             }
         });
 
-        // Configurar botão Consultar
         btnConsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +103,6 @@ public class UserActivity extends AppCompatActivity {
             }
         });
 
-        // Configurar botão Alterar
         btnAlterar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,7 +149,6 @@ public class UserActivity extends AppCompatActivity {
             }
         });
 
-        // Configurar botão Deletar
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,7 +184,6 @@ public class UserActivity extends AppCompatActivity {
         });
     }
 
-    // Implementação do método clearFields
     private void clearFields() {
         username.setText("");
         nome.setText("");

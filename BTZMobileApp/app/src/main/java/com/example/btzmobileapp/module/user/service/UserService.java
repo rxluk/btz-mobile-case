@@ -6,7 +6,9 @@ import android.os.AsyncTask;
 import com.example.btzmobileapp.config.AppDatabase;
 import com.example.btzmobileapp.module.user.dao.UserDao;
 import com.example.btzmobileapp.module.user.domain.User;
+import com.example.btzmobileapp.security.EncryptionUtil;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class UserService {
@@ -22,6 +24,7 @@ public class UserService {
         if (existingUser != null) {
             throw new Exception("Usuário já existe!");
         }
+        user.setPassword(EncryptionUtil.encryptPassword(user.getPassword()));
         new InsertUserAsync(userDao).execute(user);
     }
 
@@ -31,6 +34,7 @@ public class UserService {
             throw new Exception("Usuário não encontrado!");
         }
         user.setId(existingUser.getId());
+        user.setPassword(EncryptionUtil.encryptPassword(user.getPassword()));
         new UpdateUserAsync(userDao).execute(user);
     }
 
@@ -63,6 +67,15 @@ public class UserService {
             return new GetAllUsersAsync(userDao).execute().get();
         } catch (Exception e) {
             return null;
+        }
+    }
+
+    public User validateUser(String username, String password) throws Exception {
+        User user = new GetUserByUsernameAsync(userDao).execute(username).get();
+        if (user != null && EncryptionUtil.verifyPassword(password, user.getPassword())) {
+            return user;
+        } else {
+            throw new Exception("Credenciais inválidas!");
         }
     }
 
