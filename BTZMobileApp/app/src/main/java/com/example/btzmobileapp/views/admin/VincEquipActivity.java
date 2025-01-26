@@ -29,7 +29,7 @@ import java.util.concurrent.Executors;
 public class VincEquipActivity extends AppCompatActivity {
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
     private TextView txtResultado;
-    private EditText inputUsername;
+    private EditText inputCpf;
     private Button btnSalvar;
     private EquipamentoController equipamentoController;
     private UserController userController;
@@ -58,7 +58,7 @@ public class VincEquipActivity extends AppCompatActivity {
 
         // Inicializar componentes do layout
         txtResultado = findViewById(R.id.txtResultado);
-        inputUsername = findViewById(R.id.inputUsername);
+        inputCpf = findViewById(R.id.inputCpf);
         btnSalvar = findViewById(R.id.btnSalvar);
 
         // Inicializar controladores
@@ -79,11 +79,11 @@ public class VincEquipActivity extends AppCompatActivity {
         }
 
         btnSalvar.setOnClickListener(v -> {
-            String username = inputUsername.getText().toString();
-            if (!username.isEmpty()) {
-                vincularEquipamentoAoUsuario(username);
+            String cpf = inputCpf.getText().toString();
+            if (!cpf.isEmpty()) {
+                vincularEquipamentoAoUsuario(cpf);
             } else {
-                Toast.makeText(VincEquipActivity.this, "Por favor, insira o username", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VincEquipActivity.this, "Por favor, insira o CPF", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -113,9 +113,9 @@ public class VincEquipActivity extends AppCompatActivity {
         });
     }
 
-    private void vincularEquipamentoAoUsuario(String username) {
+    private void vincularEquipamentoAoUsuario(String cpf) {
         executorService.execute(() -> {
-            User user = userController.getUserByUsername(username);
+            User user = userController.getUserByCpf(cpf);
             if (user != null) {
                 Equipamento equipamento = equipamentoController.getEquipamentoById(equipamentoId);
                 equipamento.setUserId(user.getId());
