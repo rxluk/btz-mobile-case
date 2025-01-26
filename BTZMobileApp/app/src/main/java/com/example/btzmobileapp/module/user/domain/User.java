@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import javax.annotation.processing.Generated;
-
 @Entity(tableName = "users")
 public class User {
     @PrimaryKey(autoGenerate = true)

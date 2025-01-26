@@ -1,10 +1,11 @@
-package com.example.btzmobileapp.views.activities;
+package com.example.btzmobileapp.views.activities.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.btzmobileapp.R;
+import com.example.btzmobileapp.views.activities.LoginActivity;
 
 public class AdminActivity extends AppCompatActivity {
     private View navigationView;
@@ -17,14 +18,12 @@ public class AdminActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigationView2);
 
         // Definir comportamento do botão "Cadastrar Usuário"
-        findViewById(R.id.btnCadastrarUser).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btnUser).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminActivity.this, CadastrarUserActivity.class));
+                startActivity(new Intent(AdminActivity.this, UserActivity.class));
             }
         });
-
-        // Definir comportamentos para outros botões da mesma forma
     }
 
     @Override

@@ -26,14 +26,21 @@
 
         <!-- Declaração da AdminActivity -->
         <activity
-            android:name=".views.activities.AdminActivity"
+            android:name=".views.activities.admin.AdminActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BTZMobileApp" />
 
         <!-- Declaração da CadastrarUserActivity -->
         <activity
-            android:name=".views.activities.CadastrarUserActivity"
+            android:name=".views.activities.admin.UserActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.BTZMobileApp" />
+
+        <!-- Declaração da ConsultarUsuarioActivity -->
+        <activity
+            android:name=".views.activities.admin.ConsultarUsuarioActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BTZMobileApp" />

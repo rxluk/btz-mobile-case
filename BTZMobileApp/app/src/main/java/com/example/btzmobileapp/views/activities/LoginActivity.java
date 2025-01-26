@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.btzmobileapp.R;
 import com.example.btzmobileapp.module.user.domain.User;
 import com.example.btzmobileapp.module.user.controller.UserController;
-import com.example.btzmobileapp.module.user.service.UserService;
+import com.example.btzmobileapp.views.activities.admin.AdminActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,8 +26,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Log.d(TAG, "setContentView chamado");
 
-        // Inicializar o UserController com o UserService
-        userController = new UserController(new UserService(this));
+        // Inicializar o UserController com o contexto
+        userController = new UserController(this);
 
         Log.d(TAG, "UserController inicializado");
 
