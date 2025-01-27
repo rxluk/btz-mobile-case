@@ -8,16 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import com.example.btzmobileapp.R;
 import com.example.btzmobileapp.module.equipamento.controller.EquipamentoController;
 import com.example.btzmobileapp.module.equipamento.domain.Equipamento;
-import com.example.btzmobileapp.views.BaseAdminActivity;
+import com.example.btzmobileapp.views.BaseActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class CadastrarEquipamentoActivity extends BaseAdminActivity {
+public class CadastrarEquipamentoActivity extends BaseActivity {
 
     private EditText inputEquipamentoNome, inputEquipamentoCodigo;
     private Button btnCadastrarEquipamento;

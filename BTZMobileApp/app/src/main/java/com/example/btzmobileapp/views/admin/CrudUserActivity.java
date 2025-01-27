@@ -7,16 +7,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.btzmobileapp.R;
 import com.example.btzmobileapp.module.user.domain.User;
 import com.example.btzmobileapp.module.user.controller.UserController;
-import com.example.btzmobileapp.views.BaseAdminActivity;
+import com.example.btzmobileapp.views.BaseActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class UserActivity extends BaseAdminActivity {
+public class CrudUserActivity extends BaseActivity {
 
     private EditText username, nome, email, password, cpf;
     private RadioGroup roleGroup;
@@ -28,7 +28,7 @@ public class UserActivity extends BaseAdminActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_crud_user);
 
         userController = new UserController(this);
         executorService = Executors.newSingleThreadExecutor();
@@ -61,20 +61,20 @@ public class UserActivity extends BaseAdminActivity {
                 try {
                     userController.insertUser(newUser);
                     runOnUiThread(() -> {
-                        Toast.makeText(UserActivity.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CrudUserActivity.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
                         clearFields();
                     });
                 } catch (Exception e) {
-                    runOnUiThread(() -> Toast.makeText(UserActivity.this, "Erro ao cadastrar usuário: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                    runOnUiThread(() -> Toast.makeText(CrudUserActivity.this, "Erro ao cadastrar usuário: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                 }
             });
         });
 
         btnConsultar.setOnClickListener(v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(UserActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(CrudUserActivity.this);
             builder.setTitle("Consultar Usuário");
             builder.setMessage("Insira o CPF para consulta:");
-            final EditText input = new EditText(UserActivity.this);
+            final EditText input = new EditText(CrudUserActivity.this);
             builder.setView(input);
 
             builder.setPositiveButton("Confirmar", (dialog, which) -> {
@@ -95,9 +95,9 @@ public class UserActivity extends BaseAdminActivity {
                             } else {
                                 radioAdmin.setChecked(true);
                             }
-                            Toast.makeText(UserActivity.this, "Usuário encontrado!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CrudUserActivity.this, "Usuário encontrado!", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(UserActivity.this, "Usuário não encontrado!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CrudUserActivity.this, "Usuário não encontrado!", Toast.LENGTH_SHORT).show();
                         }
                     });
                 });
@@ -109,10 +109,10 @@ public class UserActivity extends BaseAdminActivity {
         });
 
         btnAlterar.setOnClickListener(v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(UserActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(CrudUserActivity.this);
             builder.setTitle("Alterar Usuário");
             builder.setMessage("Insira o CPF do usuário:");
-            final EditText input = new EditText(UserActivity.this);
+            final EditText input = new EditText(CrudUserActivity.this);
             builder.setView(input);
 
             builder.setPositiveButton("Confirmar", (dialog, which) -> {
@@ -133,14 +133,14 @@ public class UserActivity extends BaseAdminActivity {
                             );
                             userController.updateUserByCpf(userCpf, updatedUser);
                             runOnUiThread(() -> {
-                                Toast.makeText(UserActivity.this, "Usuário atualizado com sucesso!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CrudUserActivity.this, "Usuário atualizado com sucesso!", Toast.LENGTH_SHORT).show();
                                 clearFields();
                             });
                         } catch (Exception e) {
-                            runOnUiThread(() -> Toast.makeText(UserActivity.this, "Erro ao atualizar usuário: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                            runOnUiThread(() -> Toast.makeText(CrudUserActivity.this, "Erro ao atualizar usuário: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                         }
                     } else {
-                        runOnUiThread(() -> Toast.makeText(UserActivity.this, "Usuário não encontrado!", Toast.LENGTH_SHORT).show());
+                        runOnUiThread(() -> Toast.makeText(CrudUserActivity.this, "Usuário não encontrado!", Toast.LENGTH_SHORT).show());
                     }
                 });
             });
@@ -151,10 +151,10 @@ public class UserActivity extends BaseAdminActivity {
         });
 
         btnDeletar.setOnClickListener(v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(UserActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(CrudUserActivity.this);
             builder.setTitle("Deletar Usuário");
             builder.setMessage("Insira o CPF para deletar:");
-            final EditText input = new EditText(UserActivity.this);
+            final EditText input = new EditText(CrudUserActivity.this);
             builder.setView(input);
 
             builder.setPositiveButton("Confirmar", (dialog, which) -> {
@@ -165,11 +165,11 @@ public class UserActivity extends BaseAdminActivity {
                     try {
                         userController.deleteUserByCpf(userCpf);
                         runOnUiThread(() -> {
-                            Toast.makeText(UserActivity.this, "Usuário deletado com sucesso!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CrudUserActivity.this, "Usuário deletado com sucesso!", Toast.LENGTH_SHORT).show();
                             clearFields();
                         });
                     } catch (Exception e) {
-                        runOnUiThread(() -> Toast.makeText(UserActivity.this, "Erro ao deletar usuário: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                        runOnUiThread(() -> Toast.makeText(CrudUserActivity.this, "Erro ao deletar usuário: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                     }
                 });
             });

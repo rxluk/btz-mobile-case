@@ -3,12 +3,12 @@ package com.example.btzmobileapp.views.admin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.btzmobileapp.R;
-import com.example.btzmobileapp.views.BaseAdminActivity;
+import com.example.btzmobileapp.views.BaseActivity;
 import com.example.btzmobileapp.views.LoginActivity;
 
-public class AdminActivity extends BaseAdminActivity {
+public class AdminActivity extends BaseActivity {
     private View navigationView;
 
     @Override
@@ -22,7 +22,7 @@ public class AdminActivity extends BaseAdminActivity {
         findViewById(R.id.btnUser).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminActivity.this, UserActivity.class));
+                startActivity(new Intent(AdminActivity.this, CrudUserActivity.class));
             }
         });
 

@@ -21,6 +21,9 @@ public class EquipamentoController {
         return equipamentoService.getEquipamentoByQrCode(qrCode);
     }
 
+    public List<Equipamento> getEquipamentosByUserId(Long id) {
+        return List.of(equipamentoService.getEquipamentoById(id));
+    }
     public Bitmap convertQrCodeBase64ToBitmap(String qrCodeBase64) {
         return equipamentoService.convertQrCodeBase64ToBitmap(qrCodeBase64);
     }

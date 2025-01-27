@@ -15,6 +15,7 @@ import com.example.btzmobileapp.module.user.domain.User;
 import com.example.btzmobileapp.module.user.controller.UserController;
 import com.example.btzmobileapp.security.EncryptionUtil;
 import com.example.btzmobileapp.views.admin.AdminActivity;
+import com.example.btzmobileapp.views.user.UserActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -81,12 +82,20 @@ public class LoginActivity extends AppCompatActivity {
                 if (foundUser != null && EncryptionUtil.verifyPassword(password, foundUser.getPassword())) {
                     Log.d(TAG, "Senha verificada com sucesso");
 
-                    // Armazenar a role do usuário em SharedPreferences
-                    storeUserRole(foundUser);
+                    // Armazenar o id e a role do usuário em SharedPreferences
+                    storeUserDetails(foundUser);
 
-                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
-                    startActivity(intent);
-                    Log.d(TAG, "Iniciando AdminActivity");
+                    if ("ADMIN".equals(foundUser.getRole())) {
+                        Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                        startActivity(intent);
+                        Log.d(TAG, "Iniciando AdminActivity");
+                    } else if ("USER".equals(foundUser.getRole())) {
+                        Intent intent = new Intent(LoginActivity.this, UserActivity.class);
+                        startActivity(intent);
+                        Log.d(TAG, "Iniciando UserActivity");
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Role não reconhecida", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Log.d(TAG, "Login ou senha incorretos");
                     Toast.makeText(LoginActivity.this, "Login ou senha incorretos", Toast.LENGTH_SHORT).show();
@@ -98,9 +107,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void storeUserRole(User user) {
+    private void storeUserDetails(User user) {
         SharedPreferences preferences = getSharedPreferences("APP_PREFS", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
+        editor.putLong("USER_ID", user.getId());
         editor.putString("ROLE", user.getRole());
         editor.apply();
     }

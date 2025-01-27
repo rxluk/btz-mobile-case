@@ -19,7 +19,7 @@ import com.example.btzmobileapp.module.equipamento.controller.EquipamentoControl
 import com.example.btzmobileapp.module.equipamento.domain.Equipamento;
 import com.example.btzmobileapp.module.user.controller.UserController;
 import com.example.btzmobileapp.module.user.domain.User;
-import com.example.btzmobileapp.views.BaseAdminActivity;
+import com.example.btzmobileapp.views.BaseActivity;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class LerEquipamentoActivity extends BaseAdminActivity {
+public class LerEquipamentoActivity extends BaseActivity {
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
     private static final String TAG = "LerEquipamentoActivity";
     private TextView txtResultado;

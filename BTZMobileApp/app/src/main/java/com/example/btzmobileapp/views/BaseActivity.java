@@ -6,19 +6,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BaseAdminActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (!isUserAdmin()) {
+        if (!isUserAuthenticated()) {
             redirectToLogin();
         }
     }
 
-    private boolean isUserAdmin() {
+    private boolean isUserAuthenticated() {
         String role = getUserRole();
-        return "ADMIN".equals(role);
+        return role != null;
     }
 
     private void redirectToLogin() {

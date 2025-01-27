@@ -29,9 +29,39 @@
             android:exported="true"
             android:theme="@style/Theme.BTZMobileApp" />
 
+        <!-- Declaração da CrudUserActivity -->
+        <activity
+            android:name=".views.admin.CrudUserActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BTZMobileApp" />
+
         <!-- Declaração da UserActivity -->
         <activity
-            android:name=".views.admin.UserActivity"
+            android:name=".views.user.UserActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BTZMobileApp" />
+
+        <!-- Declaração da PerfilActivity -->
+        <activity
+            android:name=".views.user.PerfilActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BTZMobileApp" />
+
+        <!-- Declaração da HistoricoInventariosActivity -->
+        <activity
+            android:name=".views.user.HistoricoInventariosActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BTZMobileApp" />
+
+        <!-- Declaração da ListEquipamentosActivity -->
+        <activity
+            android:name=".views.user.ListEquipamentosActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BTZMobileApp" />
+
+        <!-- Declaração da NovoInventarioActivity -->
+        <activity
+            android:name=".views.user.NovoInventarioActivity"
             android:exported="true"
             android:theme="@style/Theme.BTZMobileApp" />
 
@@ -47,7 +77,7 @@
             android:exported="true"
             android:theme="@style/Theme.BTZMobileApp" />
 
-        <!-- Declaração da VincularEquipamentoActivity -->
+        <!-- Declaração da VincEquipActivity -->
         <activity
             android:name=".views.admin.VincEquipActivity"
             android:exported="true"
