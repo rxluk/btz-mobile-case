@@ -63,66 +63,63 @@
 
 ![Diagrama de Casos de Uso](/docs/UseCase.png)
 
-## 5. Estrutura de Pacotes
+# 5. Estrutura de Pacotes
 
----
-
-
-- Aqui está a estrutura de pacotes do projeto:
-
+```plaintext
 com.example.btzmobileapp
 |
 ├── config
-|   ├── AppDatabase.java
-|   └── DatabaseModule.java
+|   ├── AppDatabase.java                    // Configuração do banco de dados
+|   └── DatabaseModule.java                 // Módulo de configuração do banco de dados
 |
 ├── module
 |   ├── equipamento
 |   |   ├── controller
-|   |   |   ├── EquipamentoController.java
+|   |   |   ├── EquipamentoController.java  // Controlador de Equipamentos
 |   |   |
 |   |   ├── dao
-|   |   |   ├── EquipamentoDao.java
+|   |   |   ├── EquipamentoDao.java         // Data Access Object para Equipamentos
 |   |   |
 |   |   ├── domain
-|   |   |   ├── Equipamento.java
+|   |   |   ├── Equipamento.java            // Classe de domínio Equipamento
 |   |   |
 |   |   ├── service
-|   |   |   ├── EquipamentoService.java
+|   |   |   ├── EquipamentoService.java     // Serviço de negócio para Equipamentos
 |
 |   ├── user
 |   |   ├── controller
-|   |   |   ├── UserController.java
+|   |   |   ├── UserController.java         // Controlador de Usuários
 |   |   |
 |   |   ├── dao
-|   |   |   ├── UserDao.java
+|   |   |   ├── UserDao.java                // Data Access Object para Usuários
 |   |   |
 |   |   ├── domain
-|   |   |   ├── User.java
+|   |   |   ├── User.java                   // Classe de domínio Usuário
 |   |   |
 |   |   ├── service
-|   |   |   ├── UserService.java
+|   |   |   ├── UserService.java            // Serviço de negócio para Usuários
 |
 ├── security
-|   ├── EncryptionUtil.java
+|   ├── EncryptionUtil.java                 // Utilitário para criptografia de dados
 |
 ├── util
-|   ├── DateConverter.java
+|   ├── DateConverter.java                  // Conversor de datas para o banco de dados
 |
 ├── views
-|   ├── BaseActivity.java
-|   ├── LoginActivity.java
-|   ├── PerfilActivity.java
-|   ├── HistoricoInventariosActivity.java
-|   ├── ListEquipamentosActivity.java
-|   ├── NovoInventarioActivity.java
+|   ├── BaseActivity.java                   // Atividade base para outras atividades
+|   ├── LoginActivity.java                  // Atividade de Login
+|   ├── PerfilActivity.java                 // Atividade de Perfil do Usuário
+|   ├── HistoricoInventariosActivity.java   // Atividade de Histórico de Inventários
+|   ├── ListEquipamentosActivity.java       // Atividade de Listagem de Equipamentos
+|   ├── NovoInventarioActivity.java         // Atividade para realizar novo inventário
 |   └── user
-|       ├── UserActivity.java
+|       ├── UserActivity.java               // Atividade principal do usuário
 |   ├── admin
-|   |   ├── AdminActivity.java
-|   |   ├── CrudUserActivity.java
-|   |   ├── CadastrarEquipamentoActivity.java
-|   |   ├── LerEquipamentoActivity.java
-|   |   └── VincEquipActivity.java
+|   |   ├── AdminActivity.java              // Atividade principal do administrador
+|   |   ├── CrudUserActivity.java           // Atividade de CRUD de usuários
+|   |   ├── CadastrarEquipamentoActivity.java // Atividade de cadastro de equipamentos
+|   |   ├── LerEquipamentoActivity.java     // Atividade de leitura de equipamentos
+|   |   └── VincEquipActivity.java          // Atividade de vinculação de equipamentos
 |
-├── MainActivity.java
+├── MainActivity.java                       // Atividade principal do aplicativo
+```
