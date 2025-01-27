@@ -62,3 +62,67 @@
 - Esses casos de uso são representados graficamente através de diagramas e detalhados em etapas para fornecer uma visão completa das interações e dependências entre os componentes do sistema.
 
 ![Diagrama de Casos de Uso](/docs/UseCase.png)
+
+## 5. Estrutura de Pacotes
+
+---
+
+
+- Aqui está a estrutura de pacotes do projeto:
+
+com.example.btzmobileapp
+|
+├── config
+|   ├── AppDatabase.java
+|   └── DatabaseModule.java
+|
+├── module
+|   ├── equipamento
+|   |   ├── controller
+|   |   |   ├── EquipamentoController.java
+|   |   |
+|   |   ├── dao
+|   |   |   ├── EquipamentoDao.java
+|   |   |
+|   |   ├── domain
+|   |   |   ├── Equipamento.java
+|   |   |
+|   |   ├── service
+|   |   |   ├── EquipamentoService.java
+|
+|   ├── user
+|   |   ├── controller
+|   |   |   ├── UserController.java
+|   |   |
+|   |   ├── dao
+|   |   |   ├── UserDao.java
+|   |   |
+|   |   ├── domain
+|   |   |   ├── User.java
+|   |   |
+|   |   ├── service
+|   |   |   ├── UserService.java
+|
+├── security
+|   ├── EncryptionUtil.java
+|
+├── util
+|   ├── DateConverter.java
+|
+├── views
+|   ├── BaseActivity.java
+|   ├── LoginActivity.java
+|   ├── PerfilActivity.java
+|   ├── HistoricoInventariosActivity.java
+|   ├── ListEquipamentosActivity.java
+|   ├── NovoInventarioActivity.java
+|   └── user
+|       ├── UserActivity.java
+|   ├── admin
+|   |   ├── AdminActivity.java
+|   |   ├── CrudUserActivity.java
+|   |   ├── CadastrarEquipamentoActivity.java
+|   |   ├── LerEquipamentoActivity.java
+|   |   └── VincEquipActivity.java
+|
+├── MainActivity.java
